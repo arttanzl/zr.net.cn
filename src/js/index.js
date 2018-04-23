@@ -1,9 +1,18 @@
+// css
 require('../css/index.less');
 
-require('../common/com');
+// javascript
+var $ = window.$ = 
+require("../common/jquery.1.10.1.min.js");
+require('../common/jquery.cookie.js');
+require('../common/jquery.fn.js');
+require('../common/tools.js');
+require('../common/heightAuto.js');
 
-var aa = document.getElementById('aaa');
-aa.onclick = function(){
-  alert('111');
-};
-console.log('哈哈哈');
+// 页面代码
+$(function(){
+
+	// 全局搜索
+	$('.m-header .ui-select').custoomSelect();
+	
+});

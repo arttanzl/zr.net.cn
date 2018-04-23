@@ -1,16 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>a</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge; chrome=1">
+	<title>阻容网</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="common/js/html5shiv.js"></script>
+	<![endif]-->
 </head>
 <body>
-  <!-- <div class="tit"></div>
-  <img src="img/avatar-mini.jpg" alt=""> -->
-  <!-- <img src="img/avatar-mini.jpg" width="50" height="50" alt=""> -->
-  <a href="b.html">跳转b</a>
-  <button id="aaa">按钮ss</button>
+<!-- 头部 start -->
+<div class="m-header">
+	<div class="topwrap">
+		<div class="top">
+			<div class="f1">
+				<a href="#">网站首页</a><span> | </span>
+				<a href="#" class="on">现货供应</a><span> | </span>
+				<a href="#">实单采购</a><span> | </span>
+				<a href="#">供应列表</a><span> | </span>
+				<a href="#">采购列表</a>	
+			</div>
+			<div class="f2">
+				<a href="#">注册</a><span> | </span>
+				<a href="#">登录</a>
+			</div>
+		</div>	
+	</div>
+	<div class="nav">
+		<a href="#" class="logo">
+			<img src="img/logo.png" alt="">
+		</a>
+		<div class="navTools">
+			<div class="search">
+				<form onsubmit="return gSearchCheck()" name="gSearch" action="search.html" method="get">
+					<div class="item"><input type="text" class="ui-text" placeholder="请输入关键字"></div>
+					<div class="item">
+						<div class="ui-select">
+							<span v=""><b>供应列表</b><u><i></i></u></span>
+							<ul>
+								<li v="1">供应列表</li>
+								<li v="2">现货供应</li>
+								<li v="3">采购列表</li>
+								<li v="4">实单采购</li>
+							</ul>
+						</div>
+					</div>
+					<div class="item">
+						<button class="ui-btn">搜索</button>
+					</div>
+				</form>
+			</div>
+			<div class="caigouBtn">发布采购</div>
+			<div class="gongyiBtn">发布供应</div>
+		</div>
+	</div>
+</div>
+<!-- 头部 end -->
+<!-- 主内容区 start -->
+<div class="m-conter">
+	<div class="ltbox">
+	</div>
+	<div class="rtbox">
+	</div>
+</div>
+<!-- 主内容区 end -->
+<div class="m-space"><!-- 页面自适应区 --></div>
+<!-- 底部 start-->
+<div class="m-footer">
+	
+</div>
+<!-- 底部 end-->
 </body>
 </html>

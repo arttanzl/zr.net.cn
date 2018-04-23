@@ -1,0 +1,176 @@
+@charset "UTF-8";
+
+/*
+    base.less function start ==================================
+*/
+
+// 宽度
+._w(@w:0px){ width: @w; }
+// 高度
+._h(@h:0px){ height: @h; }
+// 内间距
+._p(@x:0px){ padding: @x; }
+// 外间距
+._m(@x:0px auto){ margin: @x; }
+// 颜色
+._c(@c:#333){ color: @c; }
+// 加粗文字
+._f(b,@size:12px,@line:180%){ font:bold @size/@line "Microsoft YaHei","Simhei",Arial,Helvetica; }
+// 不加粗文字
+._f(n,@size:12px,@line:180%){ font:normal @size/@line "Microsoft YaHei","Simhei",Arial,Helvetica; }
+// 边框
+._b(@bc:#eaeaea,@bw:1px,@bs:solid){ border: @bw @bs @bc; }
+// 背景
+._bg(@bg:#fff){ background: @bg; }
+// 基础盒子模型 宽高自适应
+._box(){ 
+    display:block; zoom:1;
+    &:after { 
+        content:"."; height:0px; line-height:0px; font-size:0px; 
+        display:block; clear:both; 
+        overflow: hidden; visibility:hidden; 
+    }
+}
+
+/*
+    base.less function end ==================================
+*/
+
+/*
+    button.less function start ==================================
+*/
+
+// 按钮
+._btnModule(@bg,@bg2,@bc,@bc2,@color,@color2,@w,@h,@padding,@bold,@size,@cursor:pointer){
+	background: @bg; border:1px solid @bc; min-width: @w; height: @h;
+	padding:0px @padding; text-align: center; border-radius: 3px;
+	color: @color; display: inline-block; zoom:1; cursor: @cursor;
+	font: @bold @size/@h "Microsoft YaHei","Simhei",Arial,Helvetica;
+	// 鼠标放上去时的效果
+	&:hover {
+		background: @bg2; border:1px solid @bc2; color: @color2; text-decoration: none;
+	}
+}
+
+/* --------------------------------------------------------------------
+// 蓝色按钮 实心背景
+.btn-blue-xx { 
+	._btnModule( #189AE5,#0B8DD6,#189AE5,#0B8DD6,#fff,#fff,140px,42px,25px,normal,18px);
+}
+.btn-blue-x {
+	._btnModule( #189AE5,#0B8DD6,#189AE5,#0B8DD6,#fff,#fff,100px,33px,20px,normal,16px);
+}
+.btn-blue-l {
+	._btnModule( #189AE5,#0B8DD6,#189AE5,#0B8DD6,#fff,#fff,90px,28px,20px,normal,14px);
+}
+.btn-blue-m {
+	._btnModule( #189AE5,#0B8DD6,#189AE5,#0B8DD6,#fff,#fff,80px,24px,15px,normal,14px);
+}
+.btn-blue-s {
+	._btnModule( #189AE5,#0B8DD6,#189AE5,#0B8DD6,#fff,#fff,60px,20px,15px,normal,12px);
+}
+
+// 黄色按钮 实心背景
+.btn-orange-xx { 
+	._btnModule( #FF9000,#F06613,#FF9000,#F06613,#fff,#fff,140px,42px,25px,normal,18px);
+}
+.btn-orange-x {
+	._btnModule( #FF9000,#F06613,#FF9000,#F06613,#fff,#fff,100px,33px,20px,normal,16px);
+}
+.btn-orange-l {
+	._btnModule( #FF9000,#F06613,#FF9000,#F06613,#fff,#fff,90px,28px,20px,normal,14px);
+}
+.btn-orange-m {
+	._btnModule( #FF9000,#F06613,#FF9000,#F06613,#fff,#fff,80px,24px,15px,normal,14px);
+}
+.btn-orange-s {
+	._btnModule( #FF9000,#F06613,#FF9000,#F06613,#fff,#fff,60px,20px,15px,normal,12px);
+}
+
+// 蓝色按钮 实边
+.btn-blue2-xx { 
+	._btnModule( #fff,#fff,#189AE5,#0B8DD6,#189AE5,#0B8DD6,140px,42px,25px,normal,18px);
+}
+.btn-blue2-x {
+	._btnModule( #fff,#fff,#189AE5,#0B8DD6,#189AE5,#0B8DD6,100px,33px,20px,normal,16px);
+}
+.btn-blue2-l {
+	._btnModule( #fff,#fff,#189AE5,#0B8DD6,#189AE5,#0B8DD6,90px,28px,20px,normal,14px);
+}
+.btn-blue2-m {
+	._btnModule( #fff,#fff,#189AE5,#0B8DD6,#189AE5,#0B8DD6,80px,24px,15px,normal,14px);
+}
+.btn-blue2-s {
+	._btnModule( #fff,#fff,#189AE5,#0B8DD6,#189AE5,#0B8DD6,60px,20px,15px,normal,12px);
+}
+
+// 蓝色按钮 实边
+.btn-blue3-xx { 
+	._btnModule( #f1faff,#e7f6ff,#8bccf2,#54afe2,#189AE5,#0b8dd6,140px,42px,25px,normal,18px);
+}
+.btn-blue3-x {
+	._btnModule( #f1faff,#e7f6ff,#8bccf2,#54afe2,#189AE5,#0b8dd6,100px,33px,20px,normal,16px);
+}
+.btn-blue3-l {
+	._btnModule( #f1faff,#e7f6ff,#8bccf2,#54afe2,#189AE5,#0b8dd6,90px,28px,20px,normal,14px);
+}
+.btn-blue3-m {
+	._btnModule( #f1faff,#e7f6ff,#8bccf2,#54afe2,#189AE5,#0b8dd6,80px,24px,15px,normal,14px);
+}
+.btn-blue3-s {
+	._btnModule( #f1faff,#e7f6ff,#8bccf2,#54afe2,#189AE5,#0b8dd6,60px,20px,15px,normal,12px);
+}
+
+// 黄色按钮 实边
+.btn-orange2-xx { 
+	._btnModule( #fff,#fff,#FF9000,#F06613,#FF9000,#F06613,140px,42px,25px,normal,18px);
+}
+.btn-orange2-x {
+	._btnModule( #fff,#fff,#FF9000,#F06613,#FF9000,#F06613,100px,33px,20px,normal,16px);
+}
+.btn-orange2-l {
+	._btnModule( #fff,#fff,#FF9000,#F06613,#FF9000,#F06613,90px,28px,20px,normal,14px);
+}
+.btn-orange2-m {
+	._btnModule( #fff,#fff,#FF9000,#F06613,#FF9000,#F06613,80px,24px,15px,normal,14px);
+}
+.btn-orange2-s {
+	._btnModule( #fff,#fff,#FF9000,#F06613,#FF9000,#F06613,60px,20px,15px,normal,12px);
+}
+
+// 灰色按钮
+.btn-disable-xx { 
+	._btnModule( #f3f3f3,#f3f3f3,#e8e8e8,#e8e8e8,#a7a7a7,#a7a7a7,140px,42px,25px,normal,18px,default);
+}
+.btn-disable-x {
+	._btnModule( #f3f3f3,#f3f3f3,#e8e8e8,#e8e8e8,#a7a7a7,#a7a7a7,100px,33px,20px,normal,16px,default);
+}
+.btn-disable-l {
+	._btnModule( #f3f3f3,#f3f3f3,#e8e8e8,#e8e8e8,#a7a7a7,#a7a7a7,90px,28px,20px,normal,14px,default);
+}
+.btn-disable-m {
+	._btnModule( #f3f3f3,#f3f3f3,#e8e8e8,#e8e8e8,#a7a7a7,#a7a7a7,80px,24px,15px,normal,14px,default);
+}
+.btn-disable-s {
+	._btnModule( #f3f3f3,#f3f3f3,#e8e8e8,#e8e8e8,#a7a7a7,#a7a7a7,60px,20px,15px,normal,12px,default);
+}
+
+
+// input textarea
+.ui-text { font:normal 14px/20px "Microsoft YaHei","Simhei",Arial,Helvetica; color: #b0b0b0; min-width: 580px; height: 20px; padding:7px 9px; background: #fbfbfb; border: 1px solid #eee; }
+.ui-text:hover { background: #fbfbff; border-color: #e0eeff; color: #666; }
+.ui-text:focus { background: #fff; border-color: #189be5; box-shadow: 0px 0px 6px 0px #def1fb; color: #666; }
+
+.ui-text-s { font:normal 14px/20px "Microsoft YaHei","Simhei",Arial,Helvetica; color: #b0b0b0; min-width: 250px; height: 20px; padding:4px 9px; background: #fbfbfb; border: 1px solid #eee; }
+.ui-text-s:hover { background: #fbfbff; border-color: #e0eeff; color: #666; }
+.ui-text-s:focus { background: #fff; border-color: #189be5; box-shadow: 0px 0px 6px 0px #def1fb; color: #666; }
+
+.ui-textarea { font:normal 14px/20px "Microsoft YaHei","Simhei",Arial,Helvetica; color: #b0b0b0; min-width: 570px; height: 80px; padding:7px 14px; background: #fbfbfb; border: 1px solid #eee; resize:none; }
+.ui-textarea:hover { background: #fbfbff; border-color: #e0eeff; color: #666; }
+.ui-textarea:focus { background: #fff; border-color: #189be5; box-shadow: 0px 0px 6px 0px #def1fb; color: #666; }
+*/
+
+/*
+    button.less function end ==================================
+*/
+

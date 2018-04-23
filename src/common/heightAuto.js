@@ -6,8 +6,6 @@
  */
 
 
-var $ = require("./jquery.1.10.1.min.js");
-
 //底部永远在最下面（自适应框架）:
 var AutoFoot = function(n) {
     var w_h = $(window).height();

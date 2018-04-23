@@ -1,0 +1,305 @@
+/*
+	base.css ==================================
+*/
+@import url('base.less');
+
+// 所有标签去掉真充和边距
+html { background:#FFF; }
+body,div,p,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,blockquote,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section { margin:0px; padding:0px; }
+body{ font:12px/150% "Microsoft YaHei","Simhei",Arial,Helvetica,sans-serif; color:#333; }
+
+h1,h2,h3,h4,h5,h6 { font-weight: 500; }
+img { border: none; }
+ol,ul,li { list-style:none; }
+pre, code, tt { font-family: "Lucida Console", "Monaco", monospace; }
+sub,sup { position:relative; font-size:75%; line-height:0; vertical-align:baseline; }
+sup{ top:-0.5em }
+sub{ bottom:-0.25em }
+em, i { font-style: normal; }
+
+// remember to highlight inserts somehow! 
+ins { text-decoration: none; }
+del { text-decoration: line-through; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+
+// tables still need 'cellspacing="0"' in the markup
+table { border-collapse: collapse; border-spacing: 0; }
+table, caption, tbody, tfoot, thead, tr, th, td { 
+	border: 0; outline: 0; vertical-align: middle; background: transparent; 
+}
+
+// 去除iphone ipad 设备默认按钮样式
+// -webkit-appearance: none;
+// 消除输入框和按钮的原生外观，在iOS上加上这个属性才能给按钮和输入框自定义样式 
+// 不同type的input使用这个属性之后表现不一。text、button无样式，radio、checkbox直接消失
+input[type="button"], input[type="submit"], input[type="reset"] ,select { 
+	-webkit-appearance: none; appearance: none; outline:none; vertical-align:middle;
+}
+textarea { overflow:auto; vertical-align:top; outline:none; }
+
+/* remember to define focus styles! */
+:focus { outline: none; }
+
+
+/*
+	COMMON CSS ==================================
+*/
+
+/* box model == overflow:hidden */
+.box { display:block; zoom:1; margin: 0px auto; }
+.box:after { content:"."; height:0px; line-height:0px; font-size:0px; display:block; clear:both; overflow: hidden; visibility:hidden; }
+
+/* 文本对齐 */
+.ta1 { text-align: left; }
+.ta2 { text-align: center; }
+.ta3 { text-align: right; }
+.va1 { vertical-align: top; }
+.va2 { vertical-align: middle; }
+.va3 { vertical-align: bottom; }
+
+/* 浮动和位置等 */
+.f1 { float:left; }
+.f2 { float:right; }
+.f3 { float:none; }
+.cl { clear:both; }
+
+/*鼠标样式*/
+.cur1 { cursor:pointer; }
+.cur2 { cursor:default; }
+
+/*显示方式*/
+.dp0 { display: none; }
+.dp1 { display: block; }
+.dp2 { display: inline-block; }
+.dp3 { display: inline; }
+
+/*
+	UI CSS ==================================
+*/
+
+/* 加载中图标 */
+.ajaxloading { display: inline-block; padding-left: 42px; height: 52px; background: url('/static/dev/global/img/loading.gif') no-repeat left center; font: 13px/52px 'Microsoft Yahei'; color: #666; }
+
+// link
+a { color:#4BB63D; text-decoration:none; }
+a:focus { outline:none; }
+a:hover,a:active { outline:none; color: #4BB63D; text-decoration:underline; }
+a.line { text-decoration:underline; }
+a.unline { text-decoration:none; }
+
+table.collapseLine  { width: 100%; margin: 10px auto; border-collapse: collapse; }
+table.collapseLine th { border: 1px solid #eaeaea; padding:5px 10px; font-weight: 700; background: #fff; }
+table.collapseLine td { border: 1px solid #eaeaea; padding:5px 10px; }
+
+
+/*
+	弹窗样式 popup CSS ==================================
+*/
+.bounceInDown { animation: bounceInDown 0.8s ease; -webkit-animation: bounceInDown 0.8s ease; -moz-animation: bounceInDown 0.8s ease; -o-animation: bounceInDown 0.8s ease; }
+.popup { background: #fff; display: none; border: 5px solid rgba(0, 0, 0, 0.6); padding: 0px; }
+.popup .hd { width: 100%; height: 50px; line-height: 50px; background: #f1f1f1; border-bottom: 1px solid #eee; color: #333; font-size: 16px; text-indent: 15px; display: block; zoom:1; } 
+.popup .hd:after { content:"."; height:0px; line-height:0px; font-size:0px; display:block; clear:both; overflow: hidden; visibility:hidden; }
+.popup .close { position: absolute; text-indent: -9999px; width: 30px; height: 30px; line-height:30px; overflow: hidden; text-align:center; top: 10px; right: 10px; color:#aaaaaa; cursor: pointer; text-decoration: none; background: url('/img/i-close.png') no-repeat center center; } 
+.popup .close:hover { text-decoration: none; }
+
+/*
+	alert popup css ==================================
+*/
+.popAlert .ct , .popConfirm .ct { text-align: center; padding:30px; font-size: 14px; line-height: 24px; color: #666; display: block; zoom:1; } 
+.popAlert .ct:after , .popConfirm .ct:after { content:"."; height:0px; line-height:0px; font-size:0px; display:block; clear:both; overflow: hidden; visibility:hidden; }
+.popAlert .ct { padding:50px; }
+.popPromp .ct { padding: 30px 50px; font-size: 14px; line-height: 24px; color: #666; } 
+.popPromp .ct h1 { font-size: 14px; line-height: 32px; margin: 0px; color: #333; }
+.popPromp .ct input { height: 16px; line-height: 16px; padding:5px; border: 1px solid #c1c1c1; font-size: 12px; width: 240px; outline: none; font-family: "microsoft Yahei"; }
+.popPromp .ct input:hover { border-color: #999; box-shadow: 0px 0px 3px 0px #ccc; text-decoration: none; }
+.popPromp .ct input:focus { box-shadow: 0 0 3px #03a9f4; border-color: #03a9f4; }
+.popIframe .ct { width: 100%; }
+
+/*
+	confirm popup css ==================================
+*/
+.popConfirm footer , .popPromp footer{ text-align: center; display: block; zoom:1; padding-bottom: 40px; }
+.popConfirm footer:after , .popPromp footer:after { content:"."; height:0px; line-height:0px; font-size:0px; display:block; clear:both; overflow: hidden; visibility:hidden; }
+.popConfirm footer .btnTrue , .popPromp footer .btnTrue { background: #189AE5; color: #fff; font-size: 14px; padding: 0px 15px; height: 30px; line-height: 30px; display: inline-block; zoom: 1; cursor: pointer; text-decoration: none; border-radius: 3px; }
+.popConfirm footer .btnTrue:hover , .popPromp footer .btnTrue:hover { background: #0B8DD6; text-decoration: none; }
+.popConfirm footer .btnFalse , .popPromp footer .btnFalse { background: #fff; color: #189AE5; border: 1px solid #189AE5; font-size: 14px; padding: 0px 15px; height: 28px; line-height: 28px; display: inline-block; zoom: 1; cursor: pointer; text-decoration: none; border-radius: 3px; }
+.popConfirm footer .btnFalse:hover , .popPromp footer .btnFalse:hover { background: #fff; border: 1px solid #0B8DD6; color: #0B8DD6; text-decoration: none; }
+
+/*
+	通用气泡小提示 bubble CSS ==================================
+*/
+.y-bubble { display:none; position:absolute; z-index:1002; padding:10px 20px 6px 10px; background:#FFFEEC; border:1px solid #F4D463;border-radius:2px; box-shadow:2px 2px 3px rgba(0,0,0,0.26); color:#555; line-height:20px; text-align:left; font-size:12px; font-family:'Microsoft Yahei';}
+.y-bubble .bub-text { padding-bottom: 5px; }
+.y-bubble .bub-def,
+.y-bubble .bub-ok ,
+.y-bubble .bub-err , 
+.y-bubble .bub-warm { display:inline-block; *display:inline; zoom:1; vertical-align:middle; padding-left:20px; line-height:20px; }
+.y-bubble .bub-def { background:url('/img/i-bobble-0.png') no-repeat 0 3px; _background-position:0 1px; }
+.y-bubble .bub-ok { background:url('/img/i-bobble-3.png') no-repeat 0 2px; _background-position:0 1px; }
+.y-bubble .bub-err { background:url('/img/i-bobble-2.png') no-repeat 0 2px; _background-position:0 1px; }
+.y-bubble .bub-warm { background:url('/img/i-bobble-1.png') no-repeat 0 2px; _background-position:0 1px; }
+.y-bubble .arrow1 ,
+.y-bubble .arrow2 { position:absolute; z-index:1; top:-24px; left:50%; margin-left:-12px; width:0; height:0; font-size:0; line-height:0; border-width:12px; border-style:dashed dashed solid dashed; border-color:transparent transparent #F4D463 transparent;overflow:hidden; }
+.y-bubble .arrow2 { top:-22px; border-width:11px; border-color:transparent transparent #FFFEEC transparent;margin-left:-11px; }
+.y-bubble .bub-cls { position:absolute; top:1px; right:2px; padding:0 2px; font:normal 12px/1 Arial; font-weight:bold; color:#333; cursor:pointer; }
+.y-bubble .bub-cls:hover { text-decoration:none; color:#FFF; background:#F4D463; }
+
+
+/*
+	页面样式 page.CSS ==================================
+*/
+
+/*头部样式*/
+.m-header {
+	width: 100%; margin: 0px auto; ._box();
+	.topwrap {
+		._box(); height: 30px; width: 100%; background: #f4f4f4; border-bottom: 1px solid #ddd;
+		.top {
+			._box(); height: 30px; width: 1200px; margin: 0 auto;
+			a { 
+				._f(n,12px,30px); color: #999; display: inline-block; padding: 0px 5px; float: left; 
+				&.on { height: 29px; border-bottom: 2px solid #ff6a00; color: #ff6a00; cursor: default; }
+				&:hover { text-decoration: none; color: #ff6a00; }
+			}
+			span { ._f(n,12px,30px); color: #dedede; display: inline-block; padding: 0px 10px; float: left; }
+		}	
+	}
+	
+	.nav {
+		width: 1200px; border-bottom: 3px solid #ff6a00; margin: 0 auto; ._box();
+		.logo {
+			height: 45px; overflow: hidden; float: left;
+			display: block; margin: 20px 0px 15px 0px;
+			img { display: block; height: 45px; width: auto; }
+		}
+		.navTools {
+			float: right; padding: 22px 5px 0px 0px;
+			.search {
+				float: left;
+				.item { float: left; }
+				.ui-text {
+					width: 200px; height: 18px; padding: 10px; border: 1px solid #BBBBBB;  ._f(n,14px,18px); border-radius: 3px 0 0 3px;
+				}
+				.ui-select {
+				    margin-left: -1px; width: 110px; height: 38px; background: #FFF; border: 1px solid #BBBBBB; outline: none; position: relative;
+				    span { 
+				    	height: 38px; padding: 0 15px; ._box(); ._f(n,14px,38px); cursor: default; 
+				    	b { float: left; font-weight: normal; }
+				    	u { 
+						    position: relative; display: block; width: 0; height: 0; float: right;
+						    margin-top: 15px;
+						    border-right: 7px solid transparent; 
+						    border-top: 9px solid #888; 
+						    border-left: 7px solid transparent; 
+						}
+						i { 
+						    position: absolute; display: block; left: -7px; bottom: 2px; width: 0; height: 0; 
+						    border-right: 7px solid transparent; 
+						    border-top: 9px solid #fff; 
+						    border-left: 7px solid transparent; 
+						}
+				    }
+				    ul {
+						width: 108px; overflow: hidden; background: #fff; border:1px solid #BBBBBB; display: none;
+						box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.1); 
+						li { 
+							display: block; ._f(n,14px,38px); padding: 0 15px; cursor: pointer;
+							&:hover { background: #BBB; color: #fff; }
+						}
+				    }
+				}
+				.ui-btn {
+					background: #ff6a00; color: #fff; width: 70px; height: 40px; ._f(n,15px,40px); text-align: center; border: none; cursor: pointer; border-radius: 0 3px 3px 0;
+				}
+			}
+			.caigouBtn {
+				background: #1CCB9F url('../../img/caigou.png') no-repeat 15px 8px; color: #fff; height: 40px; ._f(n,18px,40px); text-align: center; border: none; cursor: pointer; float: left; padding: 0 25px 0 55px; margin-left: 50px; border-radius: 3px;
+			}
+			.gongyiBtn {
+				background: #43A3FE url('../../img/gongyin.png') no-repeat 15px 8px; color: #fff; height: 40px; ._f(n,18px,40px); text-align: center; border: none; cursor: pointer; float: left; padding: 0 25px 0 55px; margin-left: 15px; border-radius: 3px;
+			}
+		}
+	}
+}
+
+/*中间内容*/
+.m-conter {
+	width: 1000px; ._box(); margin: 0 auto;
+	.ltbox { 
+		width: 720px; float: left; 
+		.crumb {
+			margin: 10px auto 0 auto;
+			a, span {
+				margin: 0 3px; color: #999;
+			}
+			a:hover { color: #000; text-decoration: none; }
+		}
+		.parts {
+			margin-bottom: 30px; ._box();
+			.box-tt {
+				._box(); margin-bottom: 10px;
+				.name { ._f(b,16px,24px); color: #000; float: left; }
+				.more { ._f(b,14px,24px); color: #4BB63D; float: right; }
+			}
+			.box-ct {
+				._box();
+			}
+		}
+	}
+	.rtbox { 
+		width: 250px; float: right; 
+		.parts {
+			margin-bottom: 30px; ._box();
+			.box-tt {
+				._box(); margin-bottom: 10px;
+				.name { ._f(b,16px,24px); color: #000; float: left; }
+				.more { ._f(b,14px,24px); color: #4BB63D; float: right; }
+			}
+			.box-ct {
+				// 新闻列表类
+				.news {
+					._box();
+					li { 
+						._f(n,14px,20px); margin: 10px auto; ._box(); 
+						a { color: #888; }
+						a:hover { color:#4BB63D; text-decoration: none; }
+					}
+				}
+			}
+		}
+	}
+}
+
+// 新闻列表类
+.rt-side-news {
+	._box();
+	li { 
+		._f(n,14px,20px); margin: 10px auto; ._box(); 
+		a { color: #888; }
+		a:hover { color:#4BB63D; text-decoration: none; }
+	}
+}
+
+/*底部样式*/
+.m-footer {
+	width: 1000px; ._box(); margin: 0 auto;
+}
+.m-footer p {
+	width: 100%; overflow: hidden; clear: both; text-align: center; color: #666; background: #FFF; font-size: 12px; line-height: 49px; border-top: 1px solid #ddd;
+	a { color: #666; }
+}
+
+/*分页*/
+.comPageBar { 
+	margin:30px auto; ._box();
+	.ltPageBar { 
+		float: left; display:inline; 
+		a { display:inline-block; float: left; margin-right:3px; padding:0px 5px; border:1px solid #ddd; color:#4BB63D; background:#FFF; text-decoration:none; border-radius: 3px; line-height: 20px; }
+		a:hover { border:1px solid #4BB63D; color:#4BB63D; }
+		i { display:inline-block; float: left; margin-right:3px; padding:0px 5px; border:1px solid #ddd; color:#666; background:#FFF; border-radius: 3px; line-height: 20px; }
+	}
+	.rtPageBar { float: right; display:inline; color:#888; ._f(n,12px,22px); }
+}
+
+
