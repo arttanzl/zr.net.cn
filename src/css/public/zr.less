@@ -214,11 +214,11 @@ table.collapseLine td { border: 1px solid #eaeaea; padding:5px 10px; }
 				}
 			}
 			.caigouBtn {
-				background: #1CCB9F url('../../img/caigou.png') no-repeat 30px 8px; color: #fff; height: 40px; ._f(n,18px,40px); text-align: center; border: none; cursor: pointer; float: left; padding: 0 25px 0 60px; margin-left: 30px; border-radius: 3px; width: 100px;
+				background: #1CCB9F url('../../img/caigou.png') no-repeat 30px 8px; color: #fff; height: 40px; ._f(n,18px,40px); text-align: center; border: none; cursor: pointer; float: left; padding: 0 25px 0 60px; margin-left: 40px; border-radius: 3px; width: 95px;
 				&:hover { background-color: #00bb8c; }
 			}
 			.gongyiBtn {
-				background: #43A3FE url('../../img/gongyin.png') no-repeat 30px 8px; color: #fff; height: 40px; ._f(n,18px,40px); text-align: center; border: none; cursor: pointer; float: left; padding: 0 25px 0 60px; margin-left: 15px; border-radius: 3px; width: 100px;
+				background: #43A3FE url('../../img/gongyin.png') no-repeat 30px 8px; color: #fff; height: 40px; ._f(n,18px,40px); text-align: center; border: none; cursor: pointer; float: left; padding: 0 25px 0 60px; margin-left: 15px; border-radius: 3px; width: 95px;
 				&:hover { background-color: #0486e4; }
 			}
 		}
@@ -227,7 +227,7 @@ table.collapseLine td { border: 1px solid #eaeaea; padding:5px 10px; }
 
 /*中间内容*/
 .m-conter {
-	width: 1200px; ._box(); margin: 0 auto;
+	width: 1200px; ._box(); margin: 0 auto; padding:10px 0 50px 0;
 	.ltbox { 
 		width: 780px; float: left; 
 		.crumb {
@@ -277,10 +277,10 @@ table.collapseLine td { border: 1px solid #eaeaea; padding:5px 10px; }
 		.side-list {
 			._box();
 			.hd {
-				._box(); height: 40px; background: #f9e4d5; border: 1px solid #f5c8a8; margin-bottom: 10px; border-radius: 3px; margin-top: 13px;
+				._box(); height: 40px; background: #fef4ec; border: 1px solid #ecdbcf; margin-bottom: 10px; border-radius: 3px; margin-top: 13px;
 				span { 
-					._f(b,14px,40px); width: 49%; text-align: center; color: #555; float: left; position: relative; cursor: pointer;
-					&:first-child { border-right: 1px solid #f5c8a8; }
+					._f(b,14px,40px); width: 49%; text-align: center; color: #888; float: left; position: relative; cursor: pointer;
+					&:first-child { border-right: 1px solid #ecdbcf; }
 					u,i {
 						display: none;
 					}
@@ -290,13 +290,13 @@ table.collapseLine td { border: 1px solid #eaeaea; padding:5px 10px; }
 						    position: absolute; display: block; width: 0; height: 0; left: 48%; bottom: -7px;
 						    margin-top: 15px;
 						    border-right: 7px solid transparent; 
-						    border-top: 9px solid #f5c8a8; 
+						    border-top: 9px solid #ecdbcf; 
 						    border-left: 7px solid transparent; 
 						}
 						i { 
 						    position: absolute; display: block; left: -7px; bottom: 2px; width: 0; height: 0; 
 						    border-right: 7px solid transparent; 
-						    border-top: 9px solid #f9e4d5; 
+						    border-top: 9px solid #fef4ec; 
 						    border-left: 7px solid transparent; 
 						}
 					}
@@ -304,7 +304,7 @@ table.collapseLine td { border: 1px solid #eaeaea; padding:5px 10px; }
 			}
 			.ct {
 				.item { 
-					padding: 13px 80px 13px 15px; ._box(); margin-bottom: 10px; position: relative; border: 1px solid #ddd; border-radius: 3px;
+					padding: 13px 80px 13px 15px; ._box(); margin-bottom: 10px; position: relative; border-radius: 3px; border: 1px solid #ddd;
 					h2 { 
 						._f(n,12px,18px); color: #555; 
 						a { 
@@ -315,8 +315,16 @@ table.collapseLine td { border: 1px solid #eaeaea; padding:5px 10px; }
 					p { 
 						color: #888; 
 					}
-					.btn {
-						position: absolute; right: 15px; top: 10px; border: 1px solid #ddd; display: block; height: 24px; ._f(n,12px,24px); padding: 0 15px;
+					&.caigou .type { color: #1ccb9f; }
+					&.gongyin .type { color: #43a3fe; }
+					.btn { position: absolute; right: 15px; top: 16px; display: block; height: 24px; ._f(n,12px,24px); padding: 0 15px; background: #ff6a00; color: #fff; border-radius: 3px; cursor: pointer; }
+					&.caigou .btn { 
+						background: #ff6a00; 
+						&:hover { background: #e46002; }
+					}
+					&.gongyin .btn { 
+						background: #ffa800; 
+						&:hover { background: #e59702; }
 					}
 				}
 			}
@@ -336,11 +344,11 @@ table.collapseLine td { border: 1px solid #eaeaea; padding:5px 10px; }
 
 /*底部样式*/
 .m-footer {
-	width: 1000px; ._box(); margin: 0 auto;
-}
-.m-footer p {
-	width: 100%; overflow: hidden; clear: both; text-align: center; color: #666; background: #FFF; font-size: 12px; line-height: 49px; border-top: 1px solid #ddd;
-	a { color: #666; }
+	width: 1200px; ._box(); margin: 0 auto;
+	p {
+		width: 100%; overflow: hidden; clear: both; text-align: center; color: #666; background: #FFF; font-size: 12px; line-height: 49px; border-top: 1px solid #ddd;
+		a { color: #666; }
+	}
 }
 
 /*分页*/

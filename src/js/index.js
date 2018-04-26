@@ -14,5 +14,12 @@ $(function(){
 
 	// 全局搜索
 	$('.m-header .ui-select').custoomSelect();
+
+	// 首页左右切换
+	$('#products .hd').on('click',"span",function(){
+		var me = $(this), index = me.index();
+		me.addClass('on').siblings().removeClass();
+		$('#products').find('.rel').eq(index+1).show().siblings().hide();
+	});
 	
 });
