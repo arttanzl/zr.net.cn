@@ -1,5 +1,5 @@
 // css
-require('../css/login.less');
+require('../css/register.less');
 
 // javascript
 var $ = window.$ = 

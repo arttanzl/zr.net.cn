@@ -23,8 +23,8 @@
 				<a href="#">采购列表</a>	
 			</div>
 			<div class="f2">
-				<a href="#">注册</a><span> | </span>
-				<a href="#">登录</a>
+				<a href="register.html">注册</a><span> | </span>
+				<a href="login.html">登录</a>
 			</div>
 		</div>	
 	</div>
@@ -50,8 +50,8 @@
 					</div>
 				</form>
 			</div>
-			<div class="caigouBtn">发布采购</div>
-			<div class="gongyiBtn">发布供应</div>
+			<div class="caigouBtn" id="caigouBtn">发布采购</div>
+			<div class="gongyiBtn" id="gongyiBtn">发布供应</div>
 		</div>
 	</div>
 </div>
@@ -59,107 +59,194 @@
 <!-- 主内容区 start -->
 <div class="m-conter">
 	<div class="ltbox">
-		<div class="parts">
-			<div class="box-tt">
-				<span class="name">现货供应</span>
-				<a class="more" href="#">更多</a>
+		<div class="box-tt" id="goodsTab">
+			<div class="name">
+				<span class="on">现货供应</span>
+				<span>实单采购</span>	
 			</div>
-			<div class="box-ct">
-				<div class="item">
-					<h2><a href="#">LM2596S DC-DC直流可调降压稳压电源模块板 </a></h2>
-					<ul>
-						<li>单价：￥1.02</li>
-						<li>数量：1000</li>
-						<li>截止：2018-12-20</li>
-						<li>发布：李先生</li>
-						<li>手机：136****2356</li>
-						<li>QQ：635***4875</li>
-					</ul>
-					<span class="badge-gongyin">供</span>
-				</div>
-				<div class="item">
-					<h2><a href="#">LM2596S DC-DC直流可调降压稳压电源模块板 </a></h2>
-					<ul>
-						<li>单价：￥1.02</li>
-						<li>数量：1000</li>
-						<li>截止：2018-12-20</li>
-						<li>发布：李先生</li>
-						<li>手机：136****2356</li>
-						<li>QQ：635***4875</li>
-					</ul>
-					<span class="badge-gongyin">供</span>
-				</div>
-				<div class="item">
-					<h2><a href="#">LM2596S DC-DC直流可调降压稳压电源模块板 </a></h2>
-					<ul>
-						<li>单价：￥1.02</li>
-						<li>数量：1000</li>
-						<li>截止：2018-12-20</li>
-						<li>发布：李先生</li>
-						<li>手机：136****2356</li>
-						<li>QQ：635***4875</li>
-					</ul>
-					<span class="badge-gongyin">供</span>
-				</div>
-				<div class="item">
-					<h2><a href="#">LM2596S DC-DC直流可调降压稳压电源模块板 </a></h2>
-					<ul>
-						<li>单价：￥1.02</li>
-						<li>数量：1000</li>
-						<li>截止：2018-12-20</li>
-						<li>发布：李先生</li>
-						<li>手机：136****2356</li>
-						<li>QQ：635***4875</li>
-					</ul>
-					<span class="badge-gongyin">供</span>
-				</div>
-				<div class="item">
-					<h2><a href="#">LM2596S DC-DC直流可调降压稳压电源模块板 </a></h2>
-					<ul>
-						<li>单价：￥1.02</li>
-						<li>数量：1000</li>
-						<li>截止：2018-12-20</li>
-						<li>发布：李先生</li>
-						<li>手机：136****2356</li>
-						<li>QQ：635***4875</li>
-					</ul>
-					<span class="badge-gongyin">供</span>
-				</div>
-				<div class="item">
-					<h2><a href="#">LM2596S DC-DC直流可调降压稳压电源模块板 </a></h2>
-					<ul>
-						<li>单价：￥1.02</li>
-						<li>数量：1000</li>
-						<li>截止：2018-12-20</li>
-						<li>发布：李先生</li>
-						<li>手机：136****2356</li>
-						<li>QQ：635***4875</li>
-					</ul>
-					<span class="badge-gongyin">供</span>
-				</div>
-				<div class="item">
-					<h2><a href="#">LM2596S DC-DC直流可调降压稳压电源模块板 </a></h2>
-					<ul>
-						<li>单价：￥1.02</li>
-						<li>数量：1000</li>
-						<li>截止：2018-12-20</li>
-						<li>发布：李先生</li>
-						<li>手机：136****2356</li>
-						<li>QQ：635***4875</li>
-					</ul>
-					<span class="badge-gongyin">供</span>
-				</div>
+			<div class="more">
+				<a href="?id=1">&gt;&gt; 更多现货</a>
+				<a href="?id=2" style="display: none;">&gt;&gt; 更多采购</a>
 			</div>
 		</div>
-		<div class="ad001">
-			<img src="img/temp/001.jpg" alt="">
-		</div>
-		<div class="parts">
-			<div class="box-tt">
-				<span class="name">实单采购</span>
-				<a class="more" href="#">更多</a>
+		<div class="box-ct" id="goodsCnt">
+			<div class="rel">
+				<div class="item">
+					<h2><a href="#">LM2596S DC-DC直流可调降压稳压电源模块板 </a></h2>
+					<ul>
+						<li>单价：￥1.02</li>
+						<li>数量：1000</li>
+						<li>截止：2018-12-20</li>
+						<li>发布：李先生</li>
+						<li>手机：136****2356</li>
+						<li>QQ：635***4875</li>
+					</ul>
+					<span class="badge-gongyin">供</span>
+				</div>
+				<div class="item">
+					<h2><a href="#">LM2596S DC-DC直流可调降压稳压电源模块板 </a></h2>
+					<ul>
+						<li>单价：￥1.02</li>
+						<li>数量：1000</li>
+						<li>截止：2018-12-20</li>
+						<li>发布：李先生</li>
+						<li>手机：136****2356</li>
+						<li>QQ：635***4875</li>
+					</ul>
+					<span class="badge-gongyin">供</span>
+				</div>
+				<div class="item">
+					<h2><a href="#">LM2596S DC-DC直流可调降压稳压电源模块板 </a></h2>
+					<ul>
+						<li>单价：￥1.02</li>
+						<li>数量：1000</li>
+						<li>截止：2018-12-20</li>
+						<li>发布：李先生</li>
+						<li>手机：136****2356</li>
+						<li>QQ：635***4875</li>
+					</ul>
+					<span class="badge-gongyin">供</span>
+				</div>
+				<div class="item">
+					<h2><a href="#">LM2596S DC-DC直流可调降压稳压电源模块板 </a></h2>
+					<ul>
+						<li>单价：￥1.02</li>
+						<li>数量：1000</li>
+						<li>截止：2018-12-20</li>
+						<li>发布：李先生</li>
+						<li>手机：136****2356</li>
+						<li>QQ：635***4875</li>
+					</ul>
+					<span class="badge-gongyin">供</span>
+				</div>
+				<div class="item">
+					<h2><a href="#">LM2596S DC-DC直流可调降压稳压电源模块板 </a></h2>
+					<ul>
+						<li>单价：￥1.02</li>
+						<li>数量：1000</li>
+						<li>截止：2018-12-20</li>
+						<li>发布：李先生</li>
+						<li>手机：136****2356</li>
+						<li>QQ：635***4875</li>
+					</ul>
+					<span class="badge-gongyin">供</span>
+				</div>
+				<div class="item">
+					<h2><a href="#">LM2596S DC-DC直流可调降压稳压电源模块板 </a></h2>
+					<ul>
+						<li>单价：￥1.02</li>
+						<li>数量：1000</li>
+						<li>截止：2018-12-20</li>
+						<li>发布：李先生</li>
+						<li>手机：136****2356</li>
+						<li>QQ：635***4875</li>
+					</ul>
+					<span class="badge-gongyin">供</span>
+				</div>
+				<div class="item">
+					<h2><a href="#">LM2596S DC-DC直流可调降压稳压电源模块板 </a></h2>
+					<ul>
+						<li>单价：￥1.02</li>
+						<li>数量：1000</li>
+						<li>截止：2018-12-20</li>
+						<li>发布：李先生</li>
+						<li>手机：136****2356</li>
+						<li>QQ：635***4875</li>
+					</ul>
+					<span class="badge-gongyin">供</span>
+				</div>
+				<div class="ad001">
+					<img src="img/temp/001.jpg" alt="">
+				</div>
+				<div class="item">
+					<h2><a href="#">LM2596S DC-DC直流可调降压稳压电源模块板 </a></h2>
+					<ul>
+						<li>单价：￥1.02</li>
+						<li>数量：1000</li>
+						<li>截止：2018-12-20</li>
+						<li>发布：李先生</li>
+						<li>手机：136****2356</li>
+						<li>QQ：635***4875</li>
+					</ul>
+					<span class="badge-gongyin">供</span>
+				</div>
+				<div class="item">
+					<h2><a href="#">LM2596S DC-DC直流可调降压稳压电源模块板 </a></h2>
+					<ul>
+						<li>单价：￥1.02</li>
+						<li>数量：1000</li>
+						<li>截止：2018-12-20</li>
+						<li>发布：李先生</li>
+						<li>手机：136****2356</li>
+						<li>QQ：635***4875</li>
+					</ul>
+					<span class="badge-gongyin">供</span>
+				</div>
+				<div class="item">
+					<h2><a href="#">LM2596S DC-DC直流可调降压稳压电源模块板 </a></h2>
+					<ul>
+						<li>单价：￥1.02</li>
+						<li>数量：1000</li>
+						<li>截止：2018-12-20</li>
+						<li>发布：李先生</li>
+						<li>手机：136****2356</li>
+						<li>QQ：635***4875</li>
+					</ul>
+					<span class="badge-gongyin">供</span>
+				</div>
+				<div class="item">
+					<h2><a href="#">LM2596S DC-DC直流可调降压稳压电源模块板 </a></h2>
+					<ul>
+						<li>单价：￥1.02</li>
+						<li>数量：1000</li>
+						<li>截止：2018-12-20</li>
+						<li>发布：李先生</li>
+						<li>手机：136****2356</li>
+						<li>QQ：635***4875</li>
+					</ul>
+					<span class="badge-gongyin">供</span>
+				</div>
+				<div class="item">
+					<h2><a href="#">LM2596S DC-DC直流可调降压稳压电源模块板 </a></h2>
+					<ul>
+						<li>单价：￥1.02</li>
+						<li>数量：1000</li>
+						<li>截止：2018-12-20</li>
+						<li>发布：李先生</li>
+						<li>手机：136****2356</li>
+						<li>QQ：635***4875</li>
+					</ul>
+					<span class="badge-gongyin">供</span>
+				</div>
+				<div class="item">
+					<h2><a href="#">LM2596S DC-DC直流可调降压稳压电源模块板 </a></h2>
+					<ul>
+						<li>单价：￥1.02</li>
+						<li>数量：1000</li>
+						<li>截止：2018-12-20</li>
+						<li>发布：李先生</li>
+						<li>手机：136****2356</li>
+						<li>QQ：635***4875</li>
+					</ul>
+					<span class="badge-gongyin">供</span>
+				</div>
+				<div class="item">
+					<h2><a href="#">LM2596S DC-DC直流可调降压稳压电源模块板 </a></h2>
+					<ul>
+						<li>单价：￥1.02</li>
+						<li>数量：1000</li>
+						<li>截止：2018-12-20</li>
+						<li>发布：李先生</li>
+						<li>手机：136****2356</li>
+						<li>QQ：635***4875</li>
+					</ul>
+					<span class="badge-gongyin">供</span>
+				</div>
+				<div class="moreItem">
+					<span>点击加载更多 ↓</span>
+				</div>
 			</div>
-			<div class="box-ct">
+			<div class="rel" style="display: none;">
 				<div class="item">
 					<h2><a href="#">LM2596S DC-DC直流可调降压稳压电源模块板 </a></h2>
 					<ul>
@@ -244,7 +331,97 @@
 					</ul>
 					<span class="badge-caigou">采</span>
 				</div>
-			</div>
+				<div class="ad001">
+					<img src="img/temp/001.jpg" alt="">
+				</div>
+				<div class="item">
+					<h2><a href="#">LM2596S DC-DC直流可调降压稳压电源模块板 </a></h2>
+					<ul>
+						<li>单价：￥1.02</li>
+						<li>数量：1000</li>
+						<li>截止：2018-12-20</li>
+						<li>发布：李先生</li>
+						<li>手机：136****2356</li>
+						<li>QQ：635***4875</li>
+					</ul>
+					<span class="badge-caigou">采</span>
+				</div>
+				<div class="item">
+					<h2><a href="#">LM2596S DC-DC直流可调降压稳压电源模块板 </a></h2>
+					<ul>
+						<li>单价：￥1.02</li>
+						<li>数量：1000</li>
+						<li>截止：2018-12-20</li>
+						<li>发布：李先生</li>
+						<li>手机：136****2356</li>
+						<li>QQ：635***4875</li>
+					</ul>
+					<span class="badge-caigou">采</span>
+				</div>
+				<div class="item">
+					<h2><a href="#">LM2596S DC-DC直流可调降压稳压电源模块板 </a></h2>
+					<ul>
+						<li>单价：￥1.02</li>
+						<li>数量：1000</li>
+						<li>截止：2018-12-20</li>
+						<li>发布：李先生</li>
+						<li>手机：136****2356</li>
+						<li>QQ：635***4875</li>
+					</ul>
+					<span class="badge-caigou">采</span>
+				</div>
+				<div class="item">
+					<h2><a href="#">LM2596S DC-DC直流可调降压稳压电源模块板 </a></h2>
+					<ul>
+						<li>单价：￥1.02</li>
+						<li>数量：1000</li>
+						<li>截止：2018-12-20</li>
+						<li>发布：李先生</li>
+						<li>手机：136****2356</li>
+						<li>QQ：635***4875</li>
+					</ul>
+					<span class="badge-caigou">采</span>
+				</div>
+				<div class="item">
+					<h2><a href="#">LM2596S DC-DC直流可调降压稳压电源模块板 </a></h2>
+					<ul>
+						<li>单价：￥1.02</li>
+						<li>数量：1000</li>
+						<li>截止：2018-12-20</li>
+						<li>发布：李先生</li>
+						<li>手机：136****2356</li>
+						<li>QQ：635***4875</li>
+					</ul>
+					<span class="badge-caigou">采</span>
+				</div>
+				<div class="item">
+					<h2><a href="#">LM2596S DC-DC直流可调降压稳压电源模块板 </a></h2>
+					<ul>
+						<li>单价：￥1.02</li>
+						<li>数量：1000</li>
+						<li>截止：2018-12-20</li>
+						<li>发布：李先生</li>
+						<li>手机：136****2356</li>
+						<li>QQ：635***4875</li>
+					</ul>
+					<span class="badge-caigou">采</span>
+				</div>
+				<div class="item">
+					<h2><a href="#">LM2596S DC-DC直流可调降压稳压电源模块板 </a></h2>
+					<ul>
+						<li>单价：￥1.02</li>
+						<li>数量：1000</li>
+						<li>截止：2018-12-20</li>
+						<li>发布：李先生</li>
+						<li>手机：136****2356</li>
+						<li>QQ：635***4875</li>
+					</ul>
+					<span class="badge-caigou">采</span>
+				</div>
+				<div class="moreItem">
+					<span>点击加载更多 ↓</span>
+				</div>
+			</div>	
 		</div>
 	</div>
 	<div class="rtbox">
@@ -412,5 +589,8 @@
     <p>版权所有 © 深圳蓝巽科技有限公司 &nbsp;  <a href="http://www.miitbeian.gov.cn" target="_blank">粤ICP备13010315号</a></p>
 </footer>
 <!-- 底部 end-->
+<!-- 弹窗 start -->
+
+<!-- 弹窗 end -->
 </body>
 </html>

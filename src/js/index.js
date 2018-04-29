@@ -6,8 +6,9 @@ var $ = window.$ =
 require("../common/jquery.1.10.1.min.js");
 require('../common/jquery.cookie.js');
 require('../common/jquery.fn.js');
-require('../common/tools.js');
 require('../common/heightAuto.js');
+// 工具类
+var tools = require('../common/tools.js');
 
 // 页面代码
 $(function(){
@@ -16,10 +17,28 @@ $(function(){
 	$('.m-header .ui-select').custoomSelect();
 
 	// 首页左右切换
+	$('#goodsTab .name').on('click',"span",function(){
+		var me = $(this), index = me.index();
+		me.addClass('on').siblings().removeClass();
+		me.parent().siblings('.more').find('a').eq(index).show().siblings().hide();
+		$('#goodsCnt').find('.rel').eq(index).show().siblings().hide();
+	});
+
+	// 首页左右切换
 	$('#products .hd').on('click',"span",function(){
 		var me = $(this), index = me.index();
 		me.addClass('on').siblings().removeClass();
 		$('#products').find('.rel').eq(index+1).show().siblings().hide();
 	});
 	
+	// 发布采购
+	$('#caigouBtn').on('click',function(){
+		tools.popup({
+			title:'发布采购',
+			html:'<div>fasfadsf</div>',
+			width:600,
+			height:500
+		})
+	});
+
 });

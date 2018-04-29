@@ -100,7 +100,7 @@ table.collapseLine td { border: 1px solid #eaeaea; padding:5px 10px; }
 .popup { background: #fff; display: none; border: 5px solid rgba(0, 0, 0, 0.6); padding: 0px; }
 .popup .hd { width: 100%; height: 50px; line-height: 50px; background: #f1f1f1; border-bottom: 1px solid #eee; color: #333; font-size: 16px; text-indent: 15px; display: block; zoom:1; } 
 .popup .hd:after { content:"."; height:0px; line-height:0px; font-size:0px; display:block; clear:both; overflow: hidden; visibility:hidden; }
-.popup .close { position: absolute; text-indent: -9999px; width: 30px; height: 30px; line-height:30px; overflow: hidden; text-align:center; top: 10px; right: 10px; color:#aaaaaa; cursor: pointer; text-decoration: none; background: url('/img/i-close.png') no-repeat center center; } 
+.popup .close { position: absolute; text-indent: -9999px; width: 30px; height: 30px; line-height:30px; overflow: hidden; text-align:center; top: 10px; right: 10px; color:#aaaaaa; cursor: pointer; text-decoration: none; background: url('../../img/i-close.png') no-repeat center center; } 
 .popup .close:hover { text-decoration: none; }
 
 /*
@@ -135,10 +135,10 @@ table.collapseLine td { border: 1px solid #eaeaea; padding:5px 10px; }
 .y-bubble .bub-ok ,
 .y-bubble .bub-err , 
 .y-bubble .bub-warm { display:inline-block; *display:inline; zoom:1; vertical-align:middle; padding-left:20px; line-height:20px; }
-.y-bubble .bub-def { background:url('/img/i-bobble-0.png') no-repeat 0 3px; _background-position:0 1px; }
-.y-bubble .bub-ok { background:url('/img/i-bobble-3.png') no-repeat 0 2px; _background-position:0 1px; }
-.y-bubble .bub-err { background:url('/img/i-bobble-2.png') no-repeat 0 2px; _background-position:0 1px; }
-.y-bubble .bub-warm { background:url('/img/i-bobble-1.png') no-repeat 0 2px; _background-position:0 1px; }
+.y-bubble .bub-def { background:url('../../img/i-bobble-0.png') no-repeat 0 3px; _background-position:0 1px; }
+.y-bubble .bub-ok { background:url('../../img/i-bobble-3.png') no-repeat 0 2px; _background-position:0 1px; }
+.y-bubble .bub-err { background:url('../../img/i-bobble-2.png') no-repeat 0 2px; _background-position:0 1px; }
+.y-bubble .bub-warm { background:url('../../img/i-bobble-1.png') no-repeat 0 2px; _background-position:0 1px; }
 .y-bubble .arrow1 ,
 .y-bubble .arrow2 { position:absolute; z-index:1; top:-24px; left:50%; margin-left:-12px; width:0; height:0; font-size:0; line-height:0; border-width:12px; border-style:dashed dashed solid dashed; border-color:transparent transparent #F4D463 transparent;overflow:hidden; }
 .y-bubble .arrow2 { top:-22px; border-width:11px; border-color:transparent transparent #FFFEEC transparent;margin-left:-11px; }
@@ -239,96 +239,10 @@ table.collapseLine td { border: 1px solid #eaeaea; padding:5px 10px; }
 		}
 		.parts {
 			._box(); margin-bottom: 15px;
-			.box-tt {
-				._box(); padding: 16px 0 14px 0; height: 24px;
-				.name { ._f(b,20px,24px); color: #ff6a00; float: left; }
-				.more { 
-					._f(n,14px,16px); padding-right: 3px; display: inline-block; margin-top: 10px; color: #002157; float: right; 
-					&:hover { color: #000; text-decoration: none; }
-				}
-			}
-			.box-ct {
-				._box(); border-top: 1px solid #ddd;
-				.item {
-					._box(); border-bottom: 1px solid #ddd; padding: 10px 3px 13px 3px; position: relative;
-					h2 { 
-						._f(b,14px,24px); color: #555; 
-						a { 
-							color: #555; 
-							&:hover { color: #000; text-decoration: none; }
-						}
-					}
-					ul { 
-						width: 100%; overflow: hidden; color: #888;
-						li { 
-							width: 30%; float: left; 
-							b { color:#ff6a00; font-weight: 500; }
-						}
-					}
-					p { color: #888; margin-bottom: 3px; }
-					.badge-gongyin { position: absolute; right: 3px; top: 22px; width: 40px; height: 40px; background: #96d0fa; ._f(n,18px,40px); color: #fff; text-align: center; border-radius: 100%; }
-					.badge-caigou { position: absolute; right: 3px; top: 22px; width: 40px; height: 40px; background: #6ae1c3; ._f(n,18px,40px); color: #fff; text-align: center; border-radius: 100%; }
-				}
-			}
 		}
 	}
 	.rtbox { 
 		width: 380px; float: right; 
-		.side-list {
-			._box();
-			.hd {
-				._box(); height: 40px; background: #fef4ec; border: 1px solid #ecdbcf; margin-bottom: 10px; border-radius: 3px; margin-top: 13px;
-				span { 
-					._f(b,14px,40px); width: 49%; text-align: center; color: #888; float: left; position: relative; cursor: pointer;
-					&:first-child { border-right: 1px solid #ecdbcf; }
-					u,i {
-						display: none;
-					}
-					&.on { 
-						color: #ff6a00; cursor: default;
-						u { 
-						    position: absolute; display: block; width: 0; height: 0; left: 48%; bottom: -7px;
-						    margin-top: 15px;
-						    border-right: 7px solid transparent; 
-						    border-top: 9px solid #ecdbcf; 
-						    border-left: 7px solid transparent; 
-						}
-						i { 
-						    position: absolute; display: block; left: -7px; bottom: 2px; width: 0; height: 0; 
-						    border-right: 7px solid transparent; 
-						    border-top: 9px solid #fef4ec; 
-						    border-left: 7px solid transparent; 
-						}
-					}
-				}
-			}
-			.ct {
-				.item { 
-					padding: 13px 80px 13px 15px; ._box(); margin-bottom: 10px; position: relative; border-radius: 3px; border: 1px solid #ddd;
-					h2 { 
-						._f(n,12px,18px); color: #555; 
-						a { 
-							color: #555; 
-							&:hover { color: #000; text-decoration: none; }
-						}
-					}
-					p { 
-						color: #888; 
-					}
-					&.caigou .type { color: #1ccb9f; }
-					&.gongyin .type { color: #43a3fe; }
-					.btn { position: absolute; right: 15px; top: 16px; display: block; height: 24px; ._f(n,12px,24px); padding: 0 15px; background: #ff6a00; color: #fff; border-radius: 3px; cursor: pointer; }
-					&.caigou .btn { 
-						background: #ff6a00; 
-						&:hover { background: #e46002; }
-					}
-					&.gongyin .btn { 
-						background: #ffa800; 
-						&:hover { background: #e59702; }
-					}
-				}
-			}
-		}
 	}
 }
 
