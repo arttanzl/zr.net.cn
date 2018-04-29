@@ -35,9 +35,17 @@ $(function(){
 	$('#caigouBtn').on('click',function(){
 		tools.popup({
 			title:'发布采购',
-			html:'<div>fasfadsf</div>',
-			width:600,
-			height:500
+			html:'#caigouPop',
+			width:600
+		})
+	});
+
+	// 发布采购
+	$('#gongyiBtn').on('click',function(){
+		tools.popup({
+			title:'发布供应',
+			html:'#gongyiPop',
+			width:600
 		})
 	});
 

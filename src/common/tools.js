@@ -594,7 +594,7 @@ var popup = function(options){
     var defaults = {                        // 创建蒙板可更改参数
         pluginCssLink:null,                 // 当前插件的基础 CSS
         width: 600,                         // 指定弹窗宽度
-        height: null,                       // 指定弹窗高度
+        height: 0,                       // 指定弹窗高度
         beforeShow: null,                   // 弹出前函数
         afterShow: null,                    // 弹出后函数
         setTimeout:null,                    // 多少毫秒后自动关闭
@@ -639,13 +639,11 @@ var popup = function(options){
 
         // 关闭弹窗
         this.hide = function(){
-            if(!me.opts.type && typefor(me.opts.html,/Object/) ){
-                me.element.hide().removeClass(me.opts.showed).appendTo(me.nodeParent);
-                me.mask.off().remove();
-            }else{
-                me.mask.off().remove();
-                me.element.off().remove();
+            if(!me.opts.type && typefor(/^#/.test(me.opts.html)) ){
+                $(me.opts.html).hide().removeClass(me.opts.showed).appendTo(me.nodeParent);
             }
+            me.mask.off().remove();
+            me.element.off().remove();
             $(window).off("resize",me.resize);
             // 执行弹窗后事件函数
             if(me.opts.afterShow){
@@ -745,11 +743,13 @@ var popup = function(options){
                     }else{
                         me.element = $('<div class="popup"><section class="ct"></section><a href="javascript:;" class="close">×</a></div>').css({'width':me.opts.width});
                     }
-                    if(typefor(me.opts.html,/Object/) ){
+                    if(/^#(.)/.test(me.opts.html)){
                         me.nodeParent = $(me.opts.html).parent();
                         me.element.find('.ct').append($(me.opts.html).show());
+                    }else if(/^<(.)/.test(me.opts.html)){
+                        me.element.find('.ct').append($(me.opts.html)); 
                     }else{
-                       me.element.find('.ct').append($(me.opts.html)); 
+                        me.element.find('.ct').append(me.opts.html); 
                     }
                 }else{
                     return ;
