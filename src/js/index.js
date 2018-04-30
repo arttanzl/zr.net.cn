@@ -37,7 +37,20 @@ $(function(){
 			title:'发布采购',
 			html:'#caigouPop',
 			width:880
-		})
+		}) 
+	});
+
+	// 切换显示 普通采购 与 实单采购
+	$('#caigouPop .isPlus').on('click','label',function(){
+		var me = $(this), index = me.index();
+		me.addClass('on').siblings().removeClass('on');
+		if(index == 1){
+			$('#caigouPop input.plus').addClass('required');
+			$('#caigouPop em.plus').removeClass('high');
+		}else{
+			$('#caigouPop input.plus').removeClass('required');
+			$('#caigouPop em.plus').addClass('high');
+		}
 	});
 
 	// 发布采购
@@ -47,6 +60,19 @@ $(function(){
 			html:'#gongyiPop',
 			width:880
 		})
+	});
+
+	// 切换显示 普通采购 与 实单采购
+	$('#gongyiPop .isPlus').on('click','label',function(){
+		var me = $(this), index = me.index();
+		me.addClass('on').siblings().removeClass('on');
+		if(index == 1){
+			$('#gongyiPop input.plus').addClass('required');
+			$('#gongyiPop em.plus').removeClass('high');
+		}else{
+			$('#gongyiPop input.plus').removeClass('required');
+			$('#gongyiPop em.plus').addClass('high');
+		}
 	});
 
 });

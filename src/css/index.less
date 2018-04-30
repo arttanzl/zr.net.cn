@@ -121,19 +121,19 @@
 	.name { 
 		._f(n,14px,30px); color: #333; text-align: right; padding-right: 5px; 
 		em { 
-			color: #ffa800; font-weight: 700; margin-right: 5px; 
-			&.high { color: #333; }
+			color: #ff6a00; font-weight: 700; margin-right: 5px; 
+			&.high { color: #FFF; }
 		}
 	}
 	.value {
 		label { 
-			float: left; ._f(n,14px,30px); margin-right: 40px; 
-			input { margin: 6px 0 0 0; float: left; }
+			float: left; ._f(n,14px,30px); margin-right: 40px; padding-left: 20px; background: url('../img/i-002.png') no-repeat 0 -93px; cursor: pointer;
+			&.on { background-position: 0 7px; cursor: default; }
 		}
 		input { 
 			height: 20px; padding: 4px 9px; border:1px solid #bbb; border-radius: 3px; background: #efefef;
 			float: left;
-			&:focus { background: #fff; border-color: #999; box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.1); }
+			&:focus, &:hover { background: #fff; border-color: #999; box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.1); }
 			&.required { background: #fff; }
 		}
 		textarea { 
@@ -171,6 +171,7 @@
 					&:hover { background: #BBB; color: #fff; }
 				}
 		    }
+		    &:hover { background: #fff; }
 		}
 		.select02 {
 		    margin-left: -1px; width: 178px; height: 28px; background: #efefef; border: 1px solid #BBBBBB; outline: none; position: relative; float: left; 
@@ -199,6 +200,7 @@
 					&:hover { background: #BBB; color: #fff; }
 				}
 		    }
+		    &:hover { background: #fff; }
 		}
 	}
 	.ui-upload { 
