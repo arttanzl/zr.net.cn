@@ -38,7 +38,8 @@
 					<div class="item"><input type="text" class="ui-text" placeholder="请输入关键字"></div>
 					<div class="item">
 						<div class="ui-select">
-							<span v=""><b>供应列表</b><u><i></i></u></span>
+							<input type="hidden" value="供应列表">
+							<span><b>供应列表</b><u><i></i></u></span>
 							<ul>
 								<li v="1">供应列表</li>
 								<li v="2">采购列表</li>
@@ -65,8 +66,8 @@
 				<span>实单采购</span>	
 			</div>
 			<div class="more">
-				<a href="?id=1">&gt;&gt; 更多现货</a>
-				<a href="?id=2" style="display: none;">&gt;&gt; 更多采购</a>
+				<a href="?id=1">&gt;&gt; 更多现货供应</a>
+				<a href="?id=2" style="display: none;">&gt;&gt; 更多实单采购</a>
 			</div>
 		</div>
 		<div class="box-ct" id="goodsCnt">
@@ -590,10 +591,106 @@
 </footer>
 <!-- 底部 end-->
 <!-- 弹窗 start -->
-<div id="caigouPop">
-	发布采购
+<div id="caigouPop" class="myform" style="display: none;">
+	<table width="100%" cellpadding="0" cellspacing="0">
+		<tr>
+			<td class="name">采购类型：</td>
+			<td class="value" colspan="5">
+				<label><input type="radio" name="type" checked="checked"> &nbsp; 普通采购</label>
+				<label><input type="radio" name="type"> &nbsp; 实单采购</label>
+			</td>
+		</tr>
+		<tr>
+			<td class="name"><em>*</em>标题：</td>
+			<td class="value" colspan="5">
+				<input class="required w705" type="text" name="mobile" class="ui-text mobile" placeholder="标题">
+			</td>
+		</tr>
+		<tr>
+			<td class="name"><em>*</em>数量：</td>
+			<td class="value">
+				<input class="required w68" type="text" name="mobile" class="ui-text mobile" placeholder="数量">
+				<div class="ui-select select01">
+					<input type="hidden" value="Kpcs">
+					<span><b>Kpcs</b><u><i></i></u></span>
+					<ul>
+						<li v="Kpcs">Kpcs</li>
+						<li v="Pcs">Pcs</li>
+					</ul>
+				</div>
+			</td>
+			<td class="name"><em class="high">*</em>单价：</td>
+			<td class="value">
+				<input class="w68" type="text" name="mobile" class="ui-text mobile" placeholder="单价">
+				<div class="ui-select select01">
+					<input type="hidden" value="RMB">
+					<span><b>RMB</b><u><i></i></u></span>
+					<ul>
+						<li v="RMB">RMB</li>
+						<li v="USD">USD</li>
+						<li v="HKD">HKD</li>
+					</ul>
+				</div>
+			</td>
+			<td class="name">是否含税：</td>
+			<td class="value">
+				<div class="ui-select select02">
+					<input type="hidden" value="0">
+					<span><b>未税</b><u><i></i></u></span>
+					<ul>
+						<li v="0">未税</li>
+						<li v="1">含16％增值税</li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="name" width="85"><em class="high">*</em>料号：</td>
+			<td class="value"><input class="w160" type="text" name="mobile" class="ui-text mobile" placeholder="料号"></td>
+			<td class="name" width="85"><em class="high">*</em>品牌：</td>
+			<td class="value"><input class="w160" type="text" name="mobile" class="ui-text mobile" placeholder="品牌"></td>
+			<td class="name" width="85">年份：</td>
+			<td class="value"><input class="w160" type="text" name="mobile" class="ui-text mobile" placeholder="年份"></td>
+		</tr>
+		<tr>
+			<td class="name" height="48">备注：</td>
+			<td class="value" colspan="3">
+				<input class="w400" type="text" name="mobile" class="ui-text mobile" placeholder="备注">
+			</td>
+			<td class="name" width="80">有效期：</td>
+			<td class="value">
+				<div class="ui-select select02">
+					<input type="hidden" value="6">
+					<span><b>一个月</b><u><i></i></u></span>
+					<ul>
+						<li v="6">一个月</li>
+						<li v="5">15天</li>
+						<li v="4">一个星期</li>
+						<li v="3">3天</li>
+						<li v="2">48小时</li>
+						<li v="1">24小时</li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="name" height="120"><em class="high">*</em>图片：</td>
+			<td class="value" colspan="5">
+				<a href="javascript:;" class="ui-upload" id="upload-cover-btn">
+                    <span>+</span>
+                    <input type="file" name="fileToUpload" id="fileToUpload"  />
+                </a>
+                <p class="ui-upload-text">图片大小不能超过 800×800 像素, 图片size不能超过 1MB </p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6" align="center">
+				<input type="bottom" value="马上发布" class="send">
+			</td>
+		</tr>
+	</table>
 </div>
-<div id="gongyiPop">
+<div id="gongyiPop" class="myform" style="display: none;">
 	发布供应
 </div>
 <!-- 弹窗 end -->

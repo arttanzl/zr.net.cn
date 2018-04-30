@@ -11,10 +11,10 @@ require('../common/heightAuto.js');
 var tools = require('../common/tools.js');
 
 // 页面代码
-$(function(){
+$(function(){ 
 
 	// 全局搜索
-	$('.m-header .ui-select').custoomSelect();
+	$('.ui-select').custoomSelect();
 
 	// 首页左右切换
 	$('#goodsTab .name').on('click',"span",function(){
@@ -36,7 +36,7 @@ $(function(){
 		tools.popup({
 			title:'发布采购',
 			html:'#caigouPop',
-			width:600
+			width:880
 		})
 	});
 
@@ -45,7 +45,7 @@ $(function(){
 		tools.popup({
 			title:'发布供应',
 			html:'#gongyiPop',
-			width:600
+			width:880
 		})
 	});
 
