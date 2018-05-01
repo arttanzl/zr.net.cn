@@ -590,6 +590,7 @@
     <p>版权所有 © 深圳蓝巽科技有限公司 &nbsp;  <a href="http://www.miitbeian.gov.cn" target="_blank">粤ICP备13010315号</a></p>
 </footer>
 <!-- 底部 end-->
+
 <!-- 采购弹窗 start -->
 <div id="caigouPop" style="display: none;">
 	<div class="myform">
@@ -608,7 +609,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="name"><em>*</em>数量：</td>
+				<td class="name"><em>*</em>需求数量：</td>
 				<td class="value">
 					<input class="comm w68 required" type="text" name="mobile" class="ui-text mobile" placeholder="数量">
 					<div class="ui-select select01">
@@ -711,7 +712,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="name"><em>*</em>数量：</td>
+				<td class="name"><em>*</em>可供数量：</td>
 				<td class="value">
 					<input class="comm w68 required" type="text" name="mobile" class="ui-text mobile" placeholder="数量">
 					<div class="ui-select select01">
@@ -810,6 +811,18 @@
 		</div>
 		<table width="100%" cellpadding="0" cellspacing="0">
 			<tr>
+				<td class="name"><em>*</em>需求数量：</td>
+				<td class="value">
+					<input class="w68 required" type="text" name="mobile" class="ui-text mobile" placeholder="数量">
+					<div class="ui-select select01">
+						<input type="hidden" value="Kpcs">
+						<span><b>Kpcs</b><u><i></i></u></span>
+						<ul>
+							<li v="Kpcs">Kpcs</li>
+							<li v="Pcs">Pcs</li>
+						</ul>
+					</div>
+				</td>
 				<td class="name"><em>*</em>单价：</td>
 				<td class="value">
 					<input class="w68 required" type="text" name="mobile" class="ui-text mobile" placeholder="单价">
@@ -820,18 +833,6 @@
 							<li v="RMB">RMB</li>
 							<li v="USD">USD</li>
 							<li v="HKD">HKD</li>
-						</ul>
-					</div>
-				</td>
-				<td class="name"><em>*</em>数量：</td>
-				<td class="value">
-					<input class="w68 required" type="text" name="mobile" class="ui-text mobile" placeholder="数量">
-					<div class="ui-select select01">
-						<input type="hidden" value="Kpcs">
-						<span><b>Kpcs</b><u><i></i></u></span>
-						<ul>
-							<li v="Kpcs">Kpcs</li>
-							<li v="Pcs">Pcs</li>
 						</ul>
 					</div>
 				</td>
@@ -877,8 +878,19 @@
 				</td>
 			</tr>
 			<tr>
+				<td class="name" height="120">图片：</td>
+				<td class="value" colspan="5">
+					<a href="javascript:;" class="ui-upload" id="upload-cover-btn">
+	                    <span>+</span>
+	                    <input type="file" name="fileToUpload" id="fileToUpload"  />
+	                </a>
+	                <p class="ui-upload-text">图片大小不能超过 800×800 像素, 图片size不能超过 1MB </p>
+				</td>
+			</tr>
+			<tr>
 				<td colspan="6" align="center">
-					<input type="bottom" value="提交询价" class="send">
+					<p><input type="bottom" value="提交询价" class="send"></p>
+					<p class="otherSend"><span><label><input type="checkbox"><b> &nbsp; 是否同时发布一条采购信息</b></label></span></p>
 				</td>
 			</tr>
 		</table>	
@@ -896,6 +908,18 @@
 		</div>
 		<table width="100%" cellpadding="0" cellspacing="0">
 			<tr>
+				<td class="name"><em>*</em>可供数量：</td>
+				<td class="value">
+					<input class="w68 required" type="text" name="mobile" class="ui-text mobile" placeholder="数量">
+					<div class="ui-select select01">
+						<input type="hidden" value="Kpcs">
+						<span><b>Kpcs</b><u><i></i></u></span>
+						<ul>
+							<li v="Kpcs">Kpcs</li>
+							<li v="Pcs">Pcs</li>
+						</ul>
+					</div>
+				</td>
 				<td class="name"><em>*</em>单价：</td>
 				<td class="value">
 					<input class="w68 required" type="text" name="mobile" class="ui-text mobile" placeholder="单价">
@@ -906,18 +930,6 @@
 							<li v="RMB">RMB</li>
 							<li v="USD">USD</li>
 							<li v="HKD">HKD</li>
-						</ul>
-					</div>
-				</td>
-				<td class="name"><em>*</em>数量：</td>
-				<td class="value">
-					<input class="w68 required" type="text" name="mobile" class="ui-text mobile" placeholder="数量">
-					<div class="ui-select select01">
-						<input type="hidden" value="Kpcs">
-						<span><b>Kpcs</b><u><i></i></u></span>
-						<ul>
-							<li v="Kpcs">Kpcs</li>
-							<li v="Pcs">Pcs</li>
 						</ul>
 					</div>
 				</td>
@@ -974,7 +986,8 @@
 			</tr>
 			<tr>
 				<td colspan="6" align="center">
-					<input type="bottom" value="提交报价" class="send">
+					<p><input type="bottom" value="提交报价" class="send"></p>
+					<p class="otherSend"><span><label><input type="checkbox"><b> &nbsp; 是否同时发布一条供应信息</b></label></span></p>
 				</td>
 			</tr>
 		</table>	

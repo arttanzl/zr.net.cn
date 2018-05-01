@@ -37,6 +37,7 @@ $(function(){
 		tools.popup({
 			html:HTML,
 			width:880,
+			moveHander:'.ct',
 			success:function(html){
 				// custom select 
 				html.find('.ui-select').custoomSelect({offsetY:28});
@@ -62,6 +63,7 @@ $(function(){
 		tools.popup({
 			html:HTML,
 			width:880,
+			moveHander:'.ct',
 			success:function(html){
 				// custom select 
 				html.find('.ui-select').custoomSelect({offsetY:28});
@@ -87,6 +89,7 @@ $(function(){
 		tools.popup({
 			html:HTML,
 			width:880,
+			moveHander:'.ct',
 			success:function(html){
 				// custom select 
 				html.find('.ui-select').custoomSelect({offsetY:28});
@@ -112,6 +115,7 @@ $(function(){
 		tools.popup({
 			html:HTML,
 			width:880,
+			moveHander:'.ct',
 			success:function(html){
 				// custom select 
 				html.find('.ui-select').custoomSelect({offsetY:28});
