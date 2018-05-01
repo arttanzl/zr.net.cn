@@ -594,7 +594,7 @@ var popup = function(options){
     var defaults = {                        // 创建蒙板可更改参数
         pluginCssLink:null,                 // 当前插件的基础 CSS
         width: 600,                         // 指定弹窗宽度
-        height: 0,                       // 指定弹窗高度
+        height: 0,                          // 指定弹窗高度
         beforeShow: null,                   // 弹出前函数
         success:null,
         afterShow: null,                    // 弹出后函数

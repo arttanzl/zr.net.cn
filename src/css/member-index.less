@@ -1,0 +1,96 @@
+@import url('./public/zr.less');
+/*中间内容*/
+.m-conter {
+	.member-nav {
+		width: 160px; min-height: 400px; float: left; padding: 0px 0 200px 0; border-right: 2px solid #ddd; margin: 40px auto;
+		ul {
+			margin:0 auto 50px auto; border-top: 1px solid #ddd; 
+			li {
+				._f(n,16px,40px); color: #ec943a; border-bottom: 1px solid #ddd; padding: 0 10px; position: relative; background: #eee;
+				img { float: left; margin: 13px 10px 0 5px; }
+				a { text-decoration: none; color: #999; }
+				u {
+					position: relative; display: block; width: 0; height: 0; float: right; margin-top: 15px;
+					border-top: 5px solid transparent; 
+					border-left: 7px solid #bbb; 
+					border-bottom: 5px solid transparent; 
+				    i {
+						position: absolute; display: block; top: -5px; right: 3px; width: 0; height: 0; 
+						border-top: 5px solid transparent; 
+						border-left: 7px solid #eee; 
+						border-bottom: 5px solid transparent; 
+				    }
+				}
+				&.on { 
+					background: #fff; margin-right: -2px;
+					a {  color: #333; }
+					u { display: none; }
+				}
+				&:hover { 
+					background: #fff;
+					a {  color: #333; }
+					u { 
+						border-left: 7px solid #333; 
+						i { border-left: 7px solid #fff;  }
+					}
+				}
+			}
+		}
+	}
+	.member-center {
+		width: 980px; float: right; border-radius: 10px; padding: 40px 0;
+		.tab {
+			width: 100%; height: 41px; border-bottom: 1px solid #ddd; ._box();
+			span { 
+				float: left; margin-right: 30px; display: block; height: 41px; ._f(n,14px,41px); cursor: pointer;
+				&.on { border-bottom: 1px solid #ff6a00; color: #ff6a00; cursor: default; }
+			}
+		}
+		.cnt { 
+			padding: 20px; ._box();
+			// 基本信息展示
+			dl { 
+				._box(); margin: 20px auto; ._f(n,16px,41px); 
+				dt { float: left; width: 100px; color: #999; }
+				dd { 
+					float: left; 
+					em { margin-right: 20px; float: left; }
+					span.btn { 
+						color: #43a3fe; cursor: pointer; margin-right: 20px; float: left;
+						&:hover { color: #43a3dd; text-decoration: underline; }
+					}
+					span.btn2 { 
+						border:1px solid #ff6a00; color: #ff6a00; ._f(n,16px,29px); margin: 5px 20px 5px 0; padding: 0 10px; cursor: pointer; float: left; border-radius: 5px;
+						&:hover { color: #fff; border:1px solid #e46002; background: #e46002; }
+					}
+				}
+			}
+			// 修改密码
+			.myPassForm {
+				._box(); padding: 32px 0;
+				.tr {
+					width: 100%; overflow: hidden; padding-bottom: 20px;
+					.ld { ._f(n,14px,40px); width: 130px; float: left; color: #333; }
+					.cd {
+						float: left; 
+						input { 
+							width: 240px; height: 20px; padding: 9px 9px 9px 40px; border:1px solid #bbb; border-radius: 3px; 
+							float: left;
+							&.password { background: url('../img/i-001.png') no-repeat 10px -594px; }
+						}
+					}
+					.rd { 
+						._f(n,14px,40px); float: left; margin-left: 10px;
+						em { color: #ff6a00; margin-right: 10px; }
+						span { color: #999; }
+					}
+					.send {
+						float: left; background: #ff6a00; color: #fff; width: 200px; height: 50px; ._f(n,18px,40px); text-align: center; border: none; cursor: pointer; border-radius: 5px; margin-left: 130px; margin-top: 50px;
+						&:hover { background: #e76203; }
+					}
+				}	
+			}
+			
+		}
+	}
+}

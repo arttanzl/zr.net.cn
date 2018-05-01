@@ -36,7 +36,7 @@ $(function(){
 		var HTML = $('#caigouPop').html();
 		tools.popup({
 			html:HTML,
-			width:880,
+			width:900,
 			moveHander:'.ct',
 			success:function(html){
 				// custom select 
@@ -62,7 +62,7 @@ $(function(){
 		var HTML = $('#gongyiPop').html();
 		tools.popup({
 			html:HTML,
-			width:880,
+			width:900,
 			moveHander:'.ct',
 			success:function(html){
 				// custom select 
@@ -88,7 +88,7 @@ $(function(){
 		var HTML = $('#xunjiaPop').html();
 		tools.popup({
 			html:HTML,
-			width:880,
+			width:900,
 			moveHander:'.ct',
 			success:function(html){
 				// custom select 
@@ -114,7 +114,7 @@ $(function(){
 		var HTML = $('#baojiaPop').html();
 		tools.popup({
 			html:HTML,
-			width:880,
+			width:900,
 			moveHander:'.ct',
 			success:function(html){
 				// custom select 
