@@ -596,6 +596,7 @@ var popup = function(options){
         width: 600,                         // 指定弹窗宽度
         height: 0,                       // 指定弹窗高度
         beforeShow: null,                   // 弹出前函数
+        success:null,
         afterShow: null,                    // 弹出后函数
         setTimeout:null,                    // 多少毫秒后自动关闭
         zindex:1000,                           // 遮罩层显示层级
@@ -751,6 +752,10 @@ var popup = function(options){
                     }else{
                         me.element.find('.ct').append(me.opts.html); 
                     }
+                    // 弹窗前预置函数
+                    if (me.opts.success) { 
+                        me.opts.success(me.element); 
+                    }  
                 }else{
                     return ;
                 }     

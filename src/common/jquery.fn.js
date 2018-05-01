@@ -7,14 +7,16 @@
 
 // 自定义 select 控伯
 $.fn.custoomSelect = function(options) {
+	// opts.offsetX 偏移值
+	// opts.offsetY 偏移值
     var defaults = {};
     var opts = $.extend(defaults, options);
     // 初始化
     var init = function(o) {
-    	var height = $(o).outerHeight()-2;
+    	var offsetY = opts.offsetY ? opts.offsetY : 0;
     	// HOVER事件
         $(o).hover(function(){
-			$(this).find('ul').show().css({'z-index':9,position:'absolute',left:'-1px',top:height});
+			$(this).find('ul').show().css({'z-index':9,position:'absolute',left:'-1px',top:offsetY});
 		},function(){
 			$(this).find('ul').hide();
 		});
