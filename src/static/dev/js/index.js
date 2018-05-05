@@ -1,7 +1,5 @@
 // css
-require('../static/less/index.less');
-
-/*
+require('../css/index.less');
 
 // javascript
 var $ = window.$ = 
@@ -138,6 +136,3 @@ $(function(){
 	});
 
 });
-
-
-*/

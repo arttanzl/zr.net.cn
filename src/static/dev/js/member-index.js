@@ -1,8 +1,5 @@
 // css
-require('../static/dev/member-index.less');
-
-/*
-
+require('../css/member-index.less');
 
 // javascript
 var $ = window.$ = 
@@ -21,4 +18,3 @@ $(function(){
 	});
 })
 
-*/

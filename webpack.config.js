@@ -10,13 +10,13 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var OpenBrowserPlugin = require('open-browser-webpack-plugin');//自动打开浏览器
 var entries = getEntry('src/js/*.js', 'src/js/');
-var commonsChunk = getCommonsChunk('src/js/*.js', 'src/js/');
+// var commonsChunk = getCommonsChunk('src/js/*.js', 'src/js/');
 var config = {
     entry: entries,
     output: {
         path: path.join(__dirname, './dist'), //输出目录的配置，模板、样式、脚本、图片等资源的路径配置都相对于它
         // publicPath: '/',              //模板、样式、脚本、图片等资源对应的server上的路径
-        filename: 'js/[name].js?v=[hash]',           //每个页面对应的主js的生成配置
+        filename: 'js/[name]_TEMP.js?v=[hash]',           //每个页面对应的主js的生成配置
         chunkFilename: 'js/[id].chunk.js'   //chunk生成的配置
     },
     module: {
@@ -150,11 +150,11 @@ var config = {
     //   jQuery: "jquery",
     //   "window.jQuery": "jquery"
     // }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'common', // 将公共模块提取，生成名为`vendors`的chunk
-      chunks: commonsChunk, //提取哪些模块共有的部分
-      minChunks: commonsChunk.length // 提取至少3个模块共有的部分
-    }),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'common', // 将公共模块提取，生成名为`vendors`的chunk
+    //   chunks: commonsChunk, //提取哪些模块共有的部分
+    //   minChunks: commonsChunk.length // 提取至少3个模块共有的部分
+    // }),
     // js压缩 ----- 生产环境打开  开发环境打开速率慢
     // new webpack.optimize.UglifyJsPlugin({
     //   beautify: false,
@@ -234,6 +234,7 @@ function getEntry (globPath, pathDir) {
   return entries;
 }
 
+/*
 function getCommonsChunk (globPath, pathDir) {
   var files = glob.sync(globPath);
   var entries = [],
@@ -248,3 +249,4 @@ function getCommonsChunk (globPath, pathDir) {
   }
   return entries;
 }
+*/

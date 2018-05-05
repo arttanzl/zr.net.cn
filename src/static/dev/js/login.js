@@ -1,8 +1,5 @@
 // css
-require('../static/dev/register.less');
-
-/*
-
+require('../css/login.less');
 
 // javascript
 var $ = window.$ = 
@@ -18,6 +15,3 @@ $(function(){
 	
 	
 });
-
-
-*/
