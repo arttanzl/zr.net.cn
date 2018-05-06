@@ -6,8 +6,10 @@
 	<title>阻容网</title>
 	<meta name="description" content="">
 	<meta name="keywords" content="">
+	<link rel="stylesheet" href="static/dev/css/zr.css?v=2017110101">
+	<link rel="stylesheet" href="static/dev/css/index.css?v=2017110101">
 	<!--[if lt IE 9]>
-	<script type="text/javascript" src="common/js/html5shiv.js"></script>
+	<script src="static/dev/js/public/html5shiv.js?v={HSTATIC_VER}"></script>
 	<![endif]-->
 </head>
 <body>
@@ -40,14 +42,10 @@
 				<form onsubmit="return gSearchCheck()" name="gSearch" action="search.html" method="get">
 					<div class="item"><input type="text" class="ui-text" placeholder="请输入关键字"></div>
 					<div class="item">
-						<div class="ui-select">
-							<input type="hidden" value="供应列表">
-							<span><b>供应列表</b><u><i></i></u></span>
-							<ul>
-								<li v="1">供应列表</li>
-								<li v="2">采购列表</li>
-							</ul>
-						</div>
+						<select id="" class='ui-select' test="required" value="0" width="80">
+							<option value="0" selected="selected">供应列表</option>
+							<option value="1">采购列表</option>
+						</select>
 					</div>
 					<div class="item">
 						<button class="ui-btn">搜索</button>
@@ -699,104 +697,154 @@
 <!-- 采购弹窗 end -->
 <!-- 供应弹窗 start -->
 <div id="gongyiPop" style="display: none;">
-	<div class="myform">
-		<table width="100%" cellpadding="0" cellspacing="0">
-			<tr>
-				<td class="name">采购类型：</td>
-				<td class="value isPlus" colspan="5">
+	<div class="popform">
+		<div class="rows">
+			<div class="cols" style="width: 280px;">
+				<div class="name">产品类别：</div>
+				<div class="value">
+					<select class='ui-select cates' test="required" value="0" width="135">
+						<option value="0" selected="selected">电容</option>
+						<option value="1">电阻</option>
+						<option value="2">IC/二三极管</option>
+					</select>
+				</div>
+			</div>
+			<div class="cols" style="width: 500px;">
+				<div class="name">采购类型：</div>
+				<div class="value">
 					<label class="on">普通供应</label>
 					<label>现货供应</label>
-				</td>
-			</tr>
-			<tr>
-				<td class="name"><em>*</em>标题：</td>
-				<td class="value" colspan="5">
-					<input class="comm w705 required" type="text" name="mobile" class="ui-text mobile" placeholder="标题">
-				</td>
-			</tr>
-			<tr>
-				<td class="name"><em>*</em>可供数量：</td>
-				<td class="value">
-					<input class="comm w68 required" type="text" name="mobile" class="ui-text mobile" placeholder="数量">
-					<div class="ui-select select01">
-						<input type="hidden" value="Kpcs">
-						<span><b>Kpcs</b><u><i></i></u></span>
-						<ul>
-							<li v="Kpcs">Kpcs</li>
-							<li v="Pcs">Pcs</li>
-						</ul>
-					</div>
-				</td>
-				<td class="name"><em class="plus high">*</em>单价：</td>
-				<td class="value">
-					<input class="w68 plus" type="text" name="mobile" class="ui-text mobile" placeholder="单价">
-					<div class="ui-select select01">
-						<input type="hidden" value="RMB">
-						<span><b>RMB</b><u><i></i></u></span>
-						<ul>
-							<li v="RMB">RMB</li>
-							<li v="USD">USD</li>
-							<li v="HKD">HKD</li>
-						</ul>
-					</div>
-				</td>
-				<td class="name">是否含税：</td>
-				<td class="value">
-					<div class="ui-select select02">
-						<input type="hidden" value="0">
-						<span><b>未税</b><u><i></i></u></span>
-						<ul>
-							<li v="0">未税</li>
-							<li v="1">含16％增值税</li>
-						</ul>
-					</div>
-				</td>
-			</tr>
-			<tr>
-				<td class="name" width="85"><em class="plus high">*</em>料号：</td>
-				<td class="value"><input class="plus w160" type="text" name="mobile" class="ui-text mobile" placeholder="料号"></td>
-				<td class="name" width="85"><em class="plus high">*</em>品牌：</td>
-				<td class="value"><input class="plus w160" type="text" name="mobile" class="ui-text mobile" placeholder="品牌"></td>
-				<td class="name" width="85"><em class="plus high">*</em>年份：</td>
-				<td class="value"><input class="plus w160" type="text" name="mobile" class="ui-text mobile" placeholder="年份"></td>
-			</tr>
-			<tr>
-				<td class="name" height="48">备注：</td>
-				<td class="value" colspan="3">
-					<input class="w400" type="text" name="mobile" class="ui-text mobile" placeholder="备注">
-				</td>
-				<td class="name" width="80">有效期：</td>
-				<td class="value">
-					<div class="ui-select select02">
-						<input type="hidden" value="6">
-						<span><b>一个月</b><u><i></i></u></span>
-						<ul>
-							<li v="6">一个月</li>
-							<li v="5">15天</li>
-							<li v="4">一个星期</li>
-							<li v="3">3天</li>
-							<li v="2">48小时</li>
-							<li v="1">24小时</li>
-						</ul>
-					</div>
-				</td>
-			</tr>
-			<tr>
-				<td class="name" height="120"><em class="plus high">*</em>图片：</td>
-				<td class="value" colspan="5">
-					<a href="javascript:;" class="ui-upload" id="upload-cover-btn">
-	                    <span>+</span>
-	                    <input type="file" name="fileToUpload" id="fileToUpload"  />
-	                </a>
-	                <p class="ui-upload-text">图片大小不能超过 800×800 像素, 图片size不能超过 1MB </p>
-				</td>
-			</tr>
-			<tr>
-				<td colspan="6" align="center">
-					<input type="bottom" value="提交供应" class="send">
-				</td>
-			</tr>
-		</table>	
+				</div>	
+			</div>
+		</div>
+
+		<div class="box" style="padding: 20px 0;">
+			<div class="rows" style="padding: 0 0 0 105px;">
+				<div class="value">
+					<input class="comm required" style="width: 180px;" type="text" name="mobile" class="ui-text mobile" value="* 请完整填写料号" placeholder="* 请完整填写料号">
+				</div>
+				<div class="value" style="margin-right: 10px;">
+					<input class="comm required" style="width: 120px;" type="text" name="mobile" class="ui-text mobile" value="或简称" placeholder="或简称">
+				</div>
+				<div class="value" style="margin-right: 10px;">
+					<input class="comm required" style="width: 80px;" type="text" name="mobile" class="ui-text mobile" value="* 品牌" placeholder="* 品牌">
+				</div>
+				<div class="value" style="margin-right: 10px;">
+					<input class="comm required" style="width: 80px;" type="text" name="mobile" class="ui-text mobile" value="* 体积" placeholder="* 体积">
+				</div>
+				<div class="value">
+					<input class="comm required" style="width: 58px;" type="text" name="mobile" class="ui-text mobile" value="* 容量" placeholder="* 容量">
+				</div>
+				<div class="f1">
+					<select class='ui-select default' test="required" value="0" width="40">
+						<option value="0" selected="selected">UF</option>
+						<option value="1">NF</option>
+						<option value="2">PF</option>
+					</select>
+				</div>
+			</div>
+			<div class="rows" style="padding: 0 0 0 105px;">
+				<div class="value" style="margin-right: 10px;">
+					<input class="comm required" style="width: 114px;" type="text" name="mobile" class="ui-text mobile" value="耐压" placeholder="耐压">
+				</div>
+				<div class="value"style="margin-right: 10px;">
+					<input class="comm required" style="width: 114px;" type="text" name="mobile" class="ui-text mobile" value="精度" placeholder="精度">
+				</div>
+				<div class="value"style="margin-right: 10px;">
+					<input class="comm required" style="width: 114px;" type="text" name="mobile" class="ui-text mobile" value="材质" placeholder="材质">
+				</div>
+				<div class="name" style="width: 80px;">最小包装：</div>
+				<div class="value">
+					<input class="comm required" style="width: 100px;" type="text" name="mobile" class="ui-text mobile" value="输入数量" placeholder="输入数量">
+					<select class='ui-select default' test="required" value="" width="51">
+						<option value="0" selected="selected">单位</option>
+						<option value="1">盘</option>
+						<option value="2">卷</option>
+						<option value="3">条</option>
+						<option value="4">盒</option>
+						<option value="5">件</option>
+						<option value="6">箱</option>
+					</select>
+				</div>
+			</div>
+			<div class="rows">
+				<div class="name"><em>*</em>标题：</div>
+				<div class="value">
+					<input class="comm required" style="width: 690px;" type="text" name="mobile" class="ui-text mobile" value="* 可以通过填写完整料号或简称自动生成标题" placeholder="* 可以通过填写完整料号或简称自动生成标题">
+				</div>
+			</div>
+		</div>
+
+		<div class="rows">
+			<div class="cols" style="width: 300px;">
+				<div class="name"><em>*</em>可供数量：</div>
+				<div class="value">
+					<input class="comm required" style="width: 80px;" type="text" name="mobile" class="ui-text mobile" value="数量" placeholder="数量">
+					<select class='ui-select default' test="required" value="Kpcs" width="67">
+						<option value="Kpcs" selected="selected">Kpcs</option>
+						<option value="Pcs">Pcs</option>
+					</select>
+				</div>	
+			</div>
+			<div class="cols" style="width: 250px;">
+				<div class="name" style="width: 80px;"><em class="plus high">*</em>单价：</div>
+				<div class="value">
+					<input class="plus" style="width: 60px;" type="text" name="mobile" class="ui-text mobile" value="单价" placeholder="单价">
+					<select class='ui-select default' test="required" value="RMB" width="60">
+						<option value="RMB" selected="selected">RMB</option>
+						<option value="USD">USD</option>
+						<option value="HKD">HKD</option>
+					</select>
+				</div>	
+			</div>
+			<div class="cols" style="width: 270px;">
+				<div class="name">是否含税：</div>
+				<div class="value">
+					<select class='ui-select default' test="required" value="0" width="138">
+						<option value="0">未税</option>
+						<option value="1">含16％增值税</option>
+					</select>
+				</div>	
+			</div>
+		</div>
+		<div class="rows">
+			<div class="cols" style="width: 300px;">
+				<div class="name" width="85"><em class="plus high">*</em>年份：</div>
+				<div class="value"><input class="plus w160" type="text" name="mobile" class="ui-text mobile" value="年份" placeholder="年份"></div>
+			</div>
+			<div class="cols" style="width: 250px;">
+				<div class="name" style="width: 80px;">有效期：</div>
+				<div class="value">
+					<select class='ui-select default' value="4" width="140">
+						<option value="6">一个月</option>
+						<option value="5">15天</option>
+						<option value="4" selected="selected">一个星期</option>
+						<option value="3">3天</option>
+						<option value="2">48小时</option>
+						<option value="1">24小时</option>
+					</select>
+				</div>
+			</div>
+			<div class="cols" style="width: 270px;">
+				<div class="name" height="48">备注：</div>
+				<div class="value" colspan="3">
+					<input type="text" name="mobile" class="ui-text mobile" style="width: 140px;" value="备注" placeholder="备注">
+				</div>
+			</div>
+		</div>
+		<div class="rows" style="height: 100px;">
+			<div class="name" height="120"><em class="plus high">*</em>图片：</div>
+			<div class="value" colspan="5">
+				<a href="javascript:;" class="ui-upload" id="upload-cover-btn">
+                    <span>+</span>
+                    <input type="file" name="fileToUpload" id="fileToUpload"  />
+                </a>
+                <p class="ui-upload-text">图片大小不能超过 800×800 像素, 图片size不能超过 1MB </p>
+			</div>
+		</div>
+		<div class="rows">
+			<input type="bottom" value="提交供应" class="send">
+		</div>
 	</div>
 </div>
 <!-- 供应弹窗 end -->
@@ -997,5 +1045,25 @@
 	</div>
 </div>
 <!-- 报价 end -->
+
+<script src='./static/dev/js/public/sea.min.js?v=2017110101'></script>
+<script>
+    var version = '2017110101';
+    seajs.config({
+        base:'./static/dev/js/',
+        alias: {
+            'jquery'    : 'public/jquery-1.10.1.js',		// JQ插件包
+            'jqPlugins' : 'public/jquery.fn.js', 			// JQ插件
+            'tools'     : 'public/tools.js', 				// 工具包
+            'common'    : 'public/common.js' 				// 通用页面模块调用
+        },
+        map: [
+            ['.css', '.css?v=' + version],
+            ['.js', '.js?v=' + version]
+        ],
+        preload: ['jquery']
+    }); 
+    seajs.use("./static/dev/js/index.js");
+</script>
 </body>
 </html>

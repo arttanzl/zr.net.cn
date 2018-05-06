@@ -6,8 +6,10 @@
 	<title>阻容网</title>
 	<meta name="description" content="">
 	<meta name="keywords" content="">
+	<link rel="stylesheet" href="static/dev/css/zr.css?v=2017110101">
+	<link rel="stylesheet" href="static/dev/css/login.css?v=2017110101">
 	<!--[if lt IE 9]>
-	<script type="text/javascript" src="common/js/html5shiv.js"></script>
+	<script src="static/dev/js/public/html5shiv.js?v={HSTATIC_VER}"></script>
 	<![endif]-->
 </head>
 <body>
@@ -37,5 +39,24 @@
 			<a class="register" href="register.html">注册</a>
 		</div>
 	</div>
+	<script src='static/dev/js/public/sea.min.js?v=2017110101'></script>
+	<script>
+	    var version = '2017110101';
+	    seajs.config({
+	        base:'static/dev/',
+	        alias: {
+	            'jquery'    : 'js/public/jquery-1.10.1.js',		// JQ插件包
+	            'jqPlugins' : 'jquery.fn.js', 					// JQ插件
+	            'tools'     : 'js/public/tools.js', 			// 工具包
+	            'common'    : 'js/public/common.js' 			// 通用页面模块调用
+	        },
+	        map: [
+	            ['.css', '.css?v=' + version],
+	            ['.js', '.js?v=' + version]
+	        ],
+	        preload: ['jquery']
+	    }); 
+	    seajs.use("static/dev/js/login.js");
+	</script>
 </body>
 </html>

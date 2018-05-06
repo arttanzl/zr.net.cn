@@ -6,8 +6,10 @@
 	<title>会员中心</title>
 	<meta name="description" content="">
 	<meta name="keywords" content="">
+	<link rel="stylesheet" href="static/dev/css/zr.css?v=2017110101">
+	<link rel="stylesheet" href="static/dev/css/member-index.css?v=2017110101">
 	<!--[if lt IE 9]>
-	<script type="text/javascript" src="common/js/html5shiv.js"></script>
+	<script src="static/dev/js/public/html5shiv.js?v={HSTATIC_VER}"></script>
 	<![endif]-->
 </head>
 <body>
@@ -121,5 +123,24 @@
     <p>版权所有 © 深圳蓝巽科技有限公司 &nbsp;  <a href="http://www.miitbeian.gov.cn" target="_blank">粤ICP备13010315号</a></p>
 </footer>
 <!-- 底部 end-->
+<script src='static/dev/js/public/sea.min.js?v=2017110101'></script>
+<script>
+    var version = '2017110101';
+    seajs.config({
+        base:'static/dev/',
+        alias: {
+            'jquery'    : 'js/public/jquery-1.10.1.js',		// JQ插件包
+            'jqPlugins' : 'jquery.fn.js', 					// JQ插件
+            'tools'     : 'js/public/tools.js', 			// 工具包
+            'common'    : 'js/public/common.js' 			// 通用页面模块调用
+        },
+        map: [
+            ['.css', '.css?v=' + version],
+            ['.js', '.js?v=' + version]
+        ],
+        preload: ['jquery']
+    }); 
+    seajs.use("static/dev/js/member-index.js");
+</script>
 </body>
 </html>
